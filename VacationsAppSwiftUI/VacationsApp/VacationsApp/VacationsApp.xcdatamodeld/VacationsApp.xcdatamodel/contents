@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DesiredVacations" representedClassName="DesiredVacations" syncable="YES" codeGenerationType="class">
+        <attribute name="hotelName" optional="YES" attributeType="String"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="imageName" optional="YES" attributeType="String"/>
+        <attribute name="location" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="necessaryMoneyAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="vDescription" optional="YES" attributeType="String"/>
+        <relationship name="notifications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notifications" inverseName="vacation" inverseEntity="Notifications"/>
+    </entity>
+    <entity name="Notifications" representedClassName="Notifications" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="vacation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DesiredVacations" inverseName="notifications" inverseEntity="DesiredVacations"/>
+    </entity>
+</model>
